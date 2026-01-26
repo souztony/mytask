@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0ts8+MTOG+w=",
+  "dgSpecHash": "LbVpIis7BRQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tonys\\Downloads\\mytask\\backend\\MyTask.Api\\MyTask.Api.csproj",
+  "projectFilePath": "C:\\Users\\tonys\\OneDrive\\Área de Trabalho\\mytask\\backend\\MyTask.Api\\MyTask.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tonys\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\tonys\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.2\\microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512",

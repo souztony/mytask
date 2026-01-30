@@ -1,56 +1,72 @@
-# MyTask API
+# ⚙️ MyTask API - Backend Core
 
-Esta é a API do projeto **MyTask**, desenvolvida com **ASP.NET Core**. Fornece serviços de autenticação e gerenciamento de tarefas para o frontend.
+[![.NET 9](https://img.shields.io/badge/.NET-9.0-512bd4?style=for-the-badge&logo=dotnet)](https://dotnet.microsoft.com/)
+[![C#](https://img.shields.io/badge/C%23-12.0-239120?style=for-the-badge&logo=c-sharp)](https://learn.microsoft.com/en-us/dotnet/csharp/)
+[![SQLite](https://img.shields.io/badge/SQLite-3.x-003b57?style=for-the-badge&logo=sqlite)](https://www.sqlite.org/)
 
-## 🚀 Tecnologias e Ferramentas
+Esta é a espinha dorsal do projeto **MyTask**, uma API RESTful de alta performance construída com **ASP.NET Core 9**. Ela gerencia toda a lógica de negócios, persistência de dados e segurança da aplicação.
 
-- **Plataforma**: .NET 9.0 (ASP.NET Core)
-- **Banco de Dados**: SQLite
-- **ORM**: Entity Framework Core
-- **Documentação**: Microsoft.AspNetCore.OpenApi (Swagger/Scalar)
-- **Segurança**: Autenticação e Serviços de Autorização
+---
+
+## 🛠️ Stack Tecnológica
+
+- **Framework**: ASP.NET Core 9.0 (Minimal APIs / Controllers)
+- **Banco de Dados**: SQLite (Persistência leve e local)
+- **ORM**: Entity Framework Core 9
+- **Documentação**: OpenAPI (Swagger/Scalar) para testes interativos
+- **Segurança**: Identity Framework para autenticação e autorização
 
 ## 🏗️ Estrutura do Projeto
 
-- `Controllers/`: Endpoints da API (Auth, Tasks).
-- `Services/`: Lógica de negócios e regras de aplicação.
-- `Domain/`: Modelos de domínio e entidades.
-- `DTOs/`: Objetos de transferência de dados para entrada e saída.
-- `Infrastructure/`: Configuração do banco de dados e contextos (AppDbContext).
+A solução está organizada seguindo princípios de separação de responsabilidades:
 
-## 🛠️ Como Executar
+- 📂 `Controllers/`: Camada de exposição dos endpoints (Auth, Tasks).
+- 📂 `Services/`: Orquestração da lógica de negócios.
+- 📂 `Domain/`: Entidades principais e modelos de dados.
+- 📂 `DTOs/`: Objetos otimizados para transferência de dados.
+- 📂 `Infrastructure/`: Configurações de banco de dados e `AppDbContext`.
+
+---
+
+## 🚀 Como Executar
 
 ### Pré-requisitos
 - [.NET SDK 9.0+](https://dotnet.microsoft.com/download)
 
-### Passos
-1. Navegue até a pasta da API:
-   ```bash
-   cd backend/MyTask.Api
-   ```
-2. Restaure as dependências:
-   ```bash
-   dotnet restore
-   ```
-3. Execute a aplicação:
-   ```bash
-   dotnet run
-   ```
-   A API estará disponível em `https://localhost:7111` ou `http://localhost:5246` (verifique a saída do console).
+### Passos para Desenvolvimento
+1.  **Navegue até o diretório**:
+    ```bash
+    cd backend/MyTask.Api
+    ```
+2.  **Restaure as dependências**:
+    ```bash
+    dotnet restore
+    ```
+3.  **Execute a aplicação**:
+    ```bash
+    dotnet run
+    ```
+    A API estará operando em:
+    - 🔒 `https://localhost:7111`
+    - 🔓 `http://localhost:5246`
 
-## 🔗 Endpoints Principais
+---
 
-### Autenticação (`/api/auth`)
-- `POST /register`: Registro de novos usuários.
-- `POST /login`: Login de usuários existentes.
+## 🔗 Documentação da API (Endpoints)
 
-### Tarefas (`/api/tasks`)
-- `GET /user/{userId}`: Lista todas as tarefas de um usuário.
-- `GET /{id}`: Obtém detalhes de uma tarefa específica.
-- `POST /user/{userId}`: Cria uma nova tarefa.
-- `PUT /{id}`: Atualiza uma tarefa existente.
-- `DELETE /{id}`: Remove uma tarefa.
+| Recurso | Método | Endpoint | Descrição |
+| :--- | :--- | :--- | :--- |
+| **Autenticação** | `POST` | `/api/auth/register` | Cria uma nova conta de usuário |
+| **Autenticação** | `POST` | `/api/auth/login` | Realiza login e retorna credenciais |
+| **Tarefas** | `GET` | `/api/tasks/user/{id}` | Lista tarefas de um usuário específico |
+| **Tarefas** | `POST` | `/api/tasks/user/{id}` | Cria uma nova tarefa para o usuário |
+| **Tarefas** | `PUT` | `/api/tasks/{id}` | Atualiza detalhes de uma tarefa |
+| **Tarefas** | `DELETE` | `/api/tasks/{id}` | Remove permanentemente uma tarefa |
 
-## 📝 Documentação da API
-Com a aplicação em execução, você pode acessar a documentação interativa (Swagger/OpenAPI):
-- `https://localhost:7111/openapi/v1.json` ou através do explorador de API configurado.
+> [!TIP]
+> Com a API rodando, acesse `/openapi/v1.json` para visualizar o esquema completo da API.
+
+---
+
+## 📄 Licença
+Distribuído sob a licença MIT. Veja `LICENSE` para mais detalhes.

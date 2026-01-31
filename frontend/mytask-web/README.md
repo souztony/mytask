@@ -4,34 +4,35 @@
 [![Vite](https://img.shields.io/badge/Vite-6.x-646cff?style=for-the-badge&logo=vite)](https://vite.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 
-Este é o frontend do projeto **MyTask**, uma SPA (Single Page Application) moderna e responsiva, focada em fornecer a melhor experiência de usuário para gerenciamento de produtividade.
+Este é o frontend do projeto **MyTask**, uma Single Page Application (SPA) de alta performance, focada em fornecer uma interface de usuário intuitiva, rápida e esteticamente agradável.
 
 ---
 
 ## ✨ Funcionalidades em Destaque
 
-- 🎨 **Interface Premium**: Design limpo, moderno e altamente interativo.
-- 🔐 **Fluxo de Autenticação**: Páginas dedicadas de login e registro com validação.
-- 📝 **CRUD de Tarefas**: Gerenciamento completo (Criar, Visualizar, Editar, Excluir).
-- ⚡ **Desempenho Otimizado**: Carregamento instantâneo graças ao motor do Vite.
+- 🎨 **Design Moderno**: Interface limpa com foco em UX (User Experience).
+- 🎬 **Animações Suaves**: Transições e efeitos visuais utilizando `Framer Motion`.
+- 🧩 **Ícones Premium**: Sistema de ícones vetoriais com `Lucide React`.
+- 🔐 **Gestão de Sessão**: Fluxos completos de autenticação e proteção de rotas.
+- ⚡ **Performance Nativa**: Build extremamente leve e rápido com `Vite`.
 
 ## 🛠️ Stack Tecnológica
 
-- **Base**: React 19
-- **Linguagem**: TypeScript (Segurança de tipos em todo o app)
-- **Build Tool**: Vite (Desenvolvimento ultra-rápido)
-- **Comunicação API**: Axios (Interceptores e tratamento de erros)
-- **Estilização**: Vanilla CSS customizado (Zero dependências pesadas)
+- **Core**: React 19
+- **Linguagem**: TypeScript
+- **Estilização**: Vanilla CSS (com variáveis modernas e Grid/Flexbox)
+- **Animações**: Framer Motion
+- **Ícones**: Lucide React
+- **Comunicação API**: Axios
 
 ---
 
 ## 🚀 Como Executar
 
 ### Pré-requisitos
-- [Node.js](https://nodejs.org/) (recomendado v18+)
-- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
+- [Node.js](https://nodejs.org/) (v18+)
 
-### Passos para Desenvolvimento
+### Passos
 1.  **Entrar no diretório**:
     ```bash
     cd frontend/mytask-web
@@ -40,26 +41,22 @@ Este é o frontend do projeto **MyTask**, uma SPA (Single Page Application) mode
     ```bash
     npm install
     ```
-3.  **Iniciar o servidor de desenvolvimento**:
+3.  **Iniciar desenvolvimento**:
     ```bash
     npm run dev
     ```
-4.  **Acesse no Navegador**:
-    `http://localhost:5173`
+    Acesse em: `http://localhost:5173`
 
 ---
 
-## 📁 Estrutura do Projeto (src/)
+## 📁 Estrutura do Projeto (`src/`)
 
-- 📂 `api/`: Configuração e instâncias do Axios para comunicação backend.
-- 📂 `components/`: Componentes atômicos e reutilizáveis da interface.
-- 📂 `pages/`: Componentes de página principal e roteamento.
-- 📂 `styles/`: Design System, tokens de cores e estilos globais.
-
----
-
-## ⚙️ Configuração da API
-O frontend espera uma API backend rodando. A URL base pode ser ajustada em `src/api/http.ts`. Certifique-se de que o backend está ativo para que as funcionalidades persistentes funcionem.
+- `api/`: Configuração do cliente HTTP e chamadas de API.
+- `components/`: Componentes reutilizáveis (TaskItem, TaskForm, etc.).
+- `hooks/`: Hooks customizados (ex: `useAuth`).
+- `pages/`: Arquitetura de páginas (Dashboard, Login, Register).
+- `types/`: Definições de interfaces e tipos TypeScript.
+- `App.css`: Design System e estilos globais centralizados.
 
 ---
 

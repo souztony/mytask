@@ -4,27 +4,27 @@
 [![C#](https://img.shields.io/badge/C%23-12.0-239120?style=for-the-badge&logo=c-sharp)](https://learn.microsoft.com/en-us/dotnet/csharp/)
 [![SQLite](https://img.shields.io/badge/SQLite-3.x-003b57?style=for-the-badge&logo=sqlite)](https://www.sqlite.org/)
 
-Esta é a espinha dorsal do projeto **MyTask**, uma API RESTful de alta performance construída com **ASP.NET Core 9**. Ela gerencia toda a lógica de negócios, persistência de dados e segurança da aplicação.
+Esta é a API RESTful de alta performance que sustenta o ecossistema **MyTask**. Desenvolvida com **ASP.NET Core 9**, ela fornece uma base sólida para autenticação, autorização e gerenciamento de dados persistentes.
 
 ---
 
 ## 🛠️ Stack Tecnológica
 
-- **Framework**: ASP.NET Core 9.0 (Minimal APIs / Controllers)
-- **Banco de Dados**: SQLite (Persistência leve e local)
-- **ORM**: Entity Framework Core 9
-- **Documentação**: OpenAPI (Swagger/Scalar) para testes interativos
-- **Segurança**: Identity Framework para autenticação e autorização
+- **Framework**: ASP.NET Core 9.0
+- **Persistência**: SQLite (Banco de dados leve e eficiente)
+- **ORM**: Entity Framework Core 9 (Code First)
+- **Documentação**: OpenAPI (Swagger/Scalar)
+- **Autenticação**: Identity Framework & JWT (Pronto para escala)
 
-## 🏗️ Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
-A solução está organizada seguindo princípios de separação de responsabilidades:
+A organização segue padrões de mercado para facilitar a manutenção:
 
-- 📂 `Controllers/`: Camada de exposição dos endpoints (Auth, Tasks).
-- 📂 `Services/`: Orquestração da lógica de negócios.
-- 📂 `Domain/`: Entidades principais e modelos de dados.
-- 📂 `DTOs/`: Objetos otimizados para transferência de dados.
-- 📂 `Infrastructure/`: Configurações de banco de dados e `AppDbContext`.
+- `Controllers/`: Endpoints da API e tratamento de requisições HTTP.
+- `Services/`: Camada de serviço contendo a lógica de negócios central.
+- `Domain/`: Entidades do banco de dados e regras de domínio.
+- `Infrastructure/`: Contexto do banco de dados (`AppDbContext`) e configurações.
+- `DTOs/`: Modelos de transferência de dados para requisições/respostas.
 
 ---
 
@@ -33,40 +33,31 @@ A solução está organizada seguindo princípios de separação de responsabili
 ### Pré-requisitos
 - [.NET SDK 9.0+](https://dotnet.microsoft.com/download)
 
-### Passos para Desenvolvimento
+### Passos
 1.  **Navegue até o diretório**:
     ```bash
     cd backend/MyTask.Api
     ```
-2.  **Restaure as dependências**:
-    ```bash
-    dotnet restore
-    ```
-3.  **Execute a aplicação**:
+2.  **Restaure e execute**:
     ```bash
     dotnet run
     ```
-    A API estará operando em:
-    - 🔒 `https://localhost:7111`
-    - 🔓 `http://localhost:5246`
+    API disponível em: `https://localhost:7111` ou `http://localhost:5246`
 
 ---
 
-## 🔗 Documentação da API (Endpoints)
+## 🔗 Endpoints Principais
 
-| Recurso | Método | Endpoint | Descrição |
+| Recurso | Método | Rota | Finalidade |
 | :--- | :--- | :--- | :--- |
-| **Autenticação** | `POST` | `/api/auth/register` | Cria uma nova conta de usuário |
-| **Autenticação** | `POST` | `/api/auth/login` | Realiza login e retorna credenciais |
-| **Tarefas** | `GET` | `/api/tasks/user/{id}` | Lista tarefas de um usuário específico |
-| **Tarefas** | `POST` | `/api/tasks/user/{id}` | Cria uma nova tarefa para o usuário |
-| **Tarefas** | `PUT` | `/api/tasks/{id}` | Atualiza detalhes de uma tarefa |
-| **Tarefas** | `DELETE` | `/api/tasks/{id}` | Remove permanentemente uma tarefa |
-
-> [!TIP]
-> Com a API rodando, acesse `/openapi/v1.json` para visualizar o esquema completo da API.
+| **Auth** | `POST` | `/api/auth/register` | Registro de novo usuário |
+| **Auth** | `POST` | `/api/auth/login` | Login e obtenção de Token |
+| **Task** | `GET` | `/api/tasks/user/{id}` | Busca todas as tarefas do usuário |
+| **Task** | `POST` | `/api/tasks/user/{id}` | Cria uma tarefa vinculada ao usuário |
+| **Task** | `PUT` | `/api/tasks/{id}` | Atualiza status/dados da tarefa |
+| **Task** | `DELETE` | `/api/tasks/{id}` | Remove uma tarefa específica |
 
 ---
 
 ## 📄 Licença
-Distribuído sob a licença MIT. Veja `LICENSE` para mais detalhes.
+Distribuído sob a licença MIT.

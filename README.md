@@ -3,7 +3,6 @@
 [![.NET 9](https://img.shields.io/badge/.NET-9.0-512bd4?style=for-the-badge&logo=dotnet)](https://dotnet.microsoft.com/)
 [![React 19](https://img.shields.io/badge/React-19.0-61dafb?style=for-the-badge&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 **MyTask** é uma plataforma moderna de gerenciamento de tarefas focada em simplicidade, performance e design premium. Desenvolvida com as tecnologias mais recentes do mercado, oferece uma experiência fluida para organização pessoal e profissional.
 

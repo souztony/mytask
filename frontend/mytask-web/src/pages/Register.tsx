@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
+import { UserPlus } from 'lucide-react';
 
 export const Register: React.FC = () => {
     const [username, setUsername] = useState('');
@@ -19,12 +20,15 @@ export const Register: React.FC = () => {
 
     return (
         <div className="auth-container">
-            <h2>Registro - MyTask</h2>
+            <h2>Criar nova conta</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="Nome de usuário" value={username} onChange={e => setUsername(e.target.value)} required />
                 <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
                 <input type="password" placeholder="Senha" value={password} onChange={e => setPassword(e.target.value)} required />
-                <button type="submit">Registrar</button>
+                <button type="submit" className="primary">
+                    <UserPlus size={18} />
+                    Registrar
+                </button>
             </form>
             <p>Já tem conta? <a href="/login">Entre aqui</a></p>
         </div>

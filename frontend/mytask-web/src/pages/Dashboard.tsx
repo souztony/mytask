@@ -5,6 +5,7 @@ import type { Task } from '../types/Task';
 import { TaskPriority, TaskStatus } from '../types/Task';
 import { TaskItem } from '../components/TaskItem';
 import { TaskForm } from '../components/TaskForm';
+import { LogOut, User as UserIcon, ListTodo } from 'lucide-react';
 
 export const Dashboard: React.FC = () => {
     const { user, logout } = useAuth();
@@ -49,10 +50,19 @@ export const Dashboard: React.FC = () => {
     return (
         <div className="dashboard">
             <header>
-                <h1>Minhas Tarefas</h1>
-                <div>
-                    <span>Olá, {user.username}!</span>
-                    <button onClick={logout}>Sair</button>
+                <h1>
+                    <ListTodo size={28} style={{ marginRight: '10px', verticalAlign: 'middle' }} />
+                    MyTask
+                </h1>
+                <div className="user-info">
+                    <div className="user-name">
+                        <UserIcon size={18} style={{ marginRight: '6px', verticalAlign: 'middle' }} />
+                        {user.username}
+                    </div>
+                    <button onClick={logout} className="secondary">
+                        <LogOut size={18} />
+                        Sair
+                    </button>
                 </div>
             </header>
 
@@ -60,7 +70,10 @@ export const Dashboard: React.FC = () => {
 
             <div className="task-list">
                 {tasks.length === 0 ? (
-                    <p>Nenhuma tarefa por enquanto.</p>
+                    <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-light)' }}>
+                        <ListTodo size={48} style={{ marginBottom: '1rem', opacity: 0.2 }} />
+                        <p>Nenhuma tarefa por enquanto. Comece adicionando uma acima!</p>
+                    </div>
                 ) : (
                     tasks.map(task => (
                         <TaskItem

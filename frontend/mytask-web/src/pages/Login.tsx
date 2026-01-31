@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
+import { LogIn } from 'lucide-react';
 
 export const Login: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -18,11 +19,14 @@ export const Login: React.FC = () => {
 
     return (
         <div className="auth-container">
-            <h2>Login - MyTask</h2>
+            <h2>Bem-vindo de volta</h2>
             <form onSubmit={handleSubmit}>
                 <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
                 <input type="password" placeholder="Senha" value={password} onChange={e => setPassword(e.target.value)} required />
-                <button type="submit">Entrar</button>
+                <button type="submit" className="primary">
+                    <LogIn size={18} />
+                    Entrar
+                </button>
             </form>
             <p>Não tem conta? <a href="/register">Registre-se</a></p>
         </div>
